@@ -14,7 +14,7 @@ const fontCss = FONTS.map(([name, file]) => {
 
 /* fondos de los mundos (tools/fondos.py): src/bg/w<k>.png pasa a la variable --img-w<k> */
 const bgDir = path.join(__dirname, 'src', 'bg');
-const bgCss = !fs.existsSync(bgDir) ? '' : ':root {\n' + fs.readdirSync(bgDir).filter(f => /^w\d+\.png$/.test(f)).sort()
+const bgCss = !fs.existsSync(bgDir) ? '' : ':root {\n' + fs.readdirSync(bgDir).filter(f => /^(w\d+|title)\.png$/.test(f)).sort()
   .map(f => `  --img-${f.slice(0, -4)}: url(data:image/png;base64,${fs.readFileSync(path.join(bgDir, f)).toString('base64')});`).join('\n') + '\n}';
 
 /* motor + contenido + interfaz */

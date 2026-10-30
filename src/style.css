@@ -73,6 +73,14 @@
   image-rendering: pixelated;
 }
 
+/* fondo de la portada (tools/portadas.py): una escena según el sistema de prueba, bajo un velo oscuro para que se lean el título y los paneles */
+.screen.scr-title {
+  --bgimg: var(--img-title);
+  background-image: linear-gradient(rgba(14, 12, 34, .34), rgba(14, 12, 34, .5)), var(--bgimg, none);
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html { height: 100%; overscroll-behavior: none; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
